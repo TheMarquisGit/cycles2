@@ -30,7 +30,6 @@ public class Main {
         for (; i < 10; i++) {
             System.out.print(10 - i + " ");
         }
-        i = 0;
 
         //Задача 3
         System.out.println("\n\nЗадача 3");
@@ -109,15 +108,12 @@ public class Main {
         int today = 2024;
         int pastPeriod = today - 200;
         int futurePeriod = today + 100;
-        while (true) {
-            for (i = 0; i <= futurePeriod; i += cometPeriod) {
-                if (i <= today && i >= pastPeriod) {
-                    System.out.println(i);
-                } else if (i > today) {
-                    System.out.println(i);
-                }
+        for (i = 0; i <= futurePeriod; i += cometPeriod) {
+            if (i <= today && i >= pastPeriod) {
+                System.out.println(i);
+            } else if (i > today) {
+                System.out.println(i);
             }
-            break;
         }
     }
 }
