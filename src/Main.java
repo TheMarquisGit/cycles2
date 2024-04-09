@@ -14,7 +14,7 @@ public class Main {
         while (targetInBank < 2_459_000) {
             targetInBank = (targetInBank + 15000) * 1.01;
             month++;
-        }
+        } //здесь даже проще выводить помесячно, чем сразу итог, пришлось сделать два перебора
         System.out.println("На вкладе под 12% годовых: Месяц " + month + ", сумма накоплений равна " + (int) targetInBank + " рублей");
         month = 0;
 
@@ -34,10 +34,10 @@ public class Main {
         //Задача 3
         System.out.println("\n\nЗадача 3");
         int population = 12_000_000;
-        int deathRatePer1000 = population / 1000 * 8;
-        int birthRatePer1000 = population / 1000 * 17;
         int year = 0;
         while (year != 10) {
+            int deathRatePer1000 = population / 1000 * 8;
+            int birthRatePer1000 = population / 1000 * 17;
             population = population - deathRatePer1000 + birthRatePer1000;
             year++;
         }
@@ -73,10 +73,6 @@ public class Main {
             month++;
             if (month % 6 == 0) {
                 System.out.println(month + " месяц: " + (int) deposit + " рублей");
-                if (month % 12 == 0) {
-                    year++;
-                    System.out.println(" - " + year + " год");
-                }
             } else if (deposit >= 12_000_000) {
                 System.out.println(month + " месяц: " + (int) deposit + " рублей - целевой результат");
             }
