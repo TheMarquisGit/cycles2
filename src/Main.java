@@ -66,16 +66,15 @@ public class Main {
         System.out.println("\nЗадача 5");
         deposit = 15000;
         month = 0;
-        year = 0;
-        System.out.println("Прогноз накопления 12млн рублей за каждые полгода:\n");
         while (deposit < 12_000_000) {
             deposit = deposit + deposit * 0.07;
             month++;
             if (month % 6 == 0) {
-                System.out.println(month + " месяц: " + (int) deposit + " рублей");
-            } else if (deposit >= 12_000_000) {
-                System.out.println(month + " месяц: " + (int) deposit + " рублей - целевой результат");
+                System.out.println(month + "-й месяц: " + (int) deposit + " рублей");
             }
+//            else if (deposit >= 12_000_000) {
+//                System.out.println(month + " месяц: " + (int) deposit + " рублей - целевой результат");
+//            }
         }
 
         //Задача 6
@@ -85,7 +84,7 @@ public class Main {
         for (i = 1; i <= month; i++) {
             deposit = deposit + deposit * 0.07;
             if (i % 6 == 0) {
-                System.out.println(i + " месяц. Накоплено: " + (int) deposit + " рублей.");
+                System.out.println(i + "-й месяц. Накоплено: " + (int) deposit + " рублей.");
             }
         } //i = 109
         System.out.println("---------------------\nЗа 9 лет будет накоплено " + (int) deposit + " рублей.");
@@ -104,10 +103,8 @@ public class Main {
         int today = 2024;
         int pastPeriod = today - 200;
         int futurePeriod = today + 100;
-        for (i = 0; i <= futurePeriod; i += cometPeriod) {
-            if (i >= pastPeriod) {
-                System.out.println(i);
-            }
+        for (int yearIndex = pastPeriod; yearIndex <= futurePeriod; yearIndex++) {
+            if (yearIndex % 79 == 0) System.out.println(yearIndex);
         }
     }
 }
