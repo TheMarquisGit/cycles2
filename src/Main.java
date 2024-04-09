@@ -22,8 +22,8 @@ public class Main {
         System.out.println("\nЗадача 2");
         int i = 0;
         while (i != 10) {
-            System.out.print(i + 1 + " ");
             i++;
+            System.out.print(i + " ");
         }
         i = 0;
         System.out.println("");
@@ -109,9 +109,7 @@ public class Main {
         int pastPeriod = today - 200;
         int futurePeriod = today + 100;
         for (i = 0; i <= futurePeriod; i += cometPeriod) {
-            if (i <= today && i >= pastPeriod) {
-                System.out.println(i);
-            } else if (i > today) {
+            if (i >= pastPeriod) {
                 System.out.println(i);
             }
         }
